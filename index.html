@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клинические рекомендации по эндокринологии</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>ЭндоГид</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#guidelines" class="nav-link">Рекомендации</a></li>
+                    <li><a href="#calculator" class="nav-link">Калькуляторы</a></li>
+                    <li><a href="#drugs" class="nav-link">Препараты</a></li>
+                    <li><a href="#news" class="nav-link">Новости</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Клинические рекомендации по эндокринологии</h1>
+                    <p>Актуальная информация для врачей-эндокринологов: диагностика, лечение и ведение пациентов</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('guidelines')">
+                            <i class="fas fa-book-medical"></i>
+                            Открыть рекомендации
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('calculator')">
+                            <i class="fas fa-calculator"></i>
+                            Калькуляторы
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Search -->
+        <section class="quick-search">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Поиск по рекомендациям, препаратам, калькуляторам...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidelines Section -->
+        <section id="guidelines" class="guidelines">
+            <div class="container">
+                <h2>Клинические рекомендации</h2>
+                <div class="guidelines-grid">
+                    <div class="guideline-card" data-category="diabetes">
+                        <div class="card-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>Сахарный диабет</h3>
+                        <p>Диагностика, лечение и мониторинг сахарного диабета 1 и 2 типа</p>
+                        <div class="card-tags">
+                            <span class="tag">Диагностика</span>
+                            <span class="tag">Лечение</span>
+                            <span class="tag">Мониторинг</span>
+                        </div>
+                        <button class="card-btn" onclick="openGuideline('diabetes')">
+                            Открыть <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="guideline-card" data-category="thyroid">
+                        <div class="card-icon">
+                            <i class="fas fa-butterfly"></i>
+                        </div>
+                        <h3>Заболевания щитовидной железы</h3>
+                        <p>Гипотиреоз, гипертиреоз, тиреоидит, узловой зоб</p>
+                        <div class="card-tags">
+                            <span class="tag">Гипотиреоз</span>
+                            <span class="tag">Гипертиреоз</span>
+                            <span class="tag">Узлы</span>
+                        </div>
+                        <button class="card-btn" onclick="openGuideline('thyroid')">
+                            Открыть <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="guideline-card" data-category="adrenal">
+                        <div class="card-icon">
+                            <i class="fas fa-adrenal"></i>
+                        </div>
+                        <h3>Заболевания надпочечников</h3>
+                        <p>Болезнь Аддисона, синдром Кушинга, феохромоцитома</p>
+                        <div class="card-tags">
+                            <span class="tag">Аддисон</span>
+                            <span class="tag">Кушинг</span>
+                            <span class="tag">Феохромоцитома</span>
+                        </div>
+                        <button class="card-btn" onclick="openGuideline('adrenal')">
+                            Открыть <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="guideline-card" data-category="obesity">
+                        <div class="card-icon">
+                            <i class="fas fa-weight"></i>
+                        </div>
+                        <h3>Ожирение и метаболический синдром</h3>
+                        <p>Диагностика и лечение ожирения, метаболического синдрома</p>
+                        <div class="card-tags">
+                            <span class="tag">Ожирение</span>
+                            <span class="tag">Метаболический синдром</span>
+                            <span class="tag">Диета</span>
+                        </div>
+                        <button class="card-btn" onclick="openGuideline('obesity')">
+                            Открыть <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="guideline-card" data-category="pituitary">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Заболевания гипофиза</h3>
+                        <p>Акромегалия, пролактинома, несахарный диабет</p>
+                        <div class="card-tags">
+                            <span class="tag">Акромегалия</span>
+                            <span class="tag">Пролактинома</span>
+                            <span class="tag">Несахарный диабет</span>
+                        </div>
+                        <button class="card-btn" onclick="openGuideline('pituitary')">
+                            Открыть <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="guideline-card" data-category="calcium">
+                        <div class="card-icon">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3>Нарушения кальциевого обмена</h3>
+                        <p>Гиперпаратиреоз, гипопаратиреоз, остеопороз, рахит</p>
+                        <div class="card-tags">
+                            <span class="tag">Гиперпаратиреоз</span>
+                            <span class="tag">Остеопороз</span>
+                            <span class="tag">Рахит</span>
+                            <span class="tag">Кальций</span>
+                        </div>
+                        <button class="card-btn" onclick="openGuideline('calcium')">
+                            Открыть <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="calculator">
+            <div class="container">
+                <h2>Клинические калькуляторы</h2>
+                <div class="calculator-grid">
+                    <div class="calc-card">
+                        <div class="calc-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>ИМТ калькулятор</h3>
+                        <p>Расчет индекса массы тела и оценка рисков</p>
+                        <button class="calc-btn" onclick="openCalculator('bmi')">
+                            Открыть калькулятор
+                        </button>
+                    </div>
+
+                    <div class="calc-card">
+                        <div class="calc-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Калькулятор сердечно-сосудистого риска</h3>
+                        <p>Оценка риска сердечно-сосудистых осложнений</p>
+                        <button class="calc-btn" onclick="openCalculator('cv-risk')">
+                            Открыть калькулятор
+                        </button>
+                    </div>
+
+                    <div class="calc-card">
+                        <div class="calc-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>Калькулятор доз инсулина</h3>
+                        <p>Расчет доз инсулина для пациентов с СД</p>
+                        <button class="calc-btn" onclick="openCalculator('insulin')">
+                            Открыть калькулятор
+                        </button>
+                    </div>
+
+                    <div class="calc-card">
+                        <div class="calc-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3>Калькулятор доз левотироксина</h3>
+                        <p>Расчет доз L-тироксина при гипотиреозе</p>
+                        <button class="calc-btn" onclick="openCalculator('levothyroxine')">
+                            Открыть калькулятор
+                        </button>
+                    </div>
+
+                    <div class="calc-card">
+                        <div class="calc-icon">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3>Калькулятор риска переломов (FRAX)</h3>
+                        <p>Оценка 10-летнего риска переломов при остеопорозе</p>
+                        <button class="calc-btn" onclick="openCalculator('frax')">
+                            Открыть калькулятор
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drugs Section -->
+        <section id="drugs" class="drugs">
+            <div class="container">
+                <h2>Справочник препаратов</h2>
+                <div class="drugs-filter">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="diabetes">СД</button>
+                    <button class="filter-btn" data-filter="thyroid">Щитовидная железа</button>
+                    <button class="filter-btn" data-filter="adrenal">Надпочечники</button>
+                    <button class="filter-btn" data-filter="pituitary">Гипофиз</button>
+                    <button class="filter-btn" data-filter="calcium">Кальций</button>
+                </div>
+                <div class="drugs-grid">
+                    <div class="drug-card" data-category="diabetes">
+                        <h3>Метформин</h3>
+                        <p class="drug-class">Бигуаниды</p>
+                        <p class="drug-description">Препарат первой линии для лечения СД 2 типа</p>
+                        <div class="drug-details">
+                            <span><strong>Дозировка:</strong> 500-2550 мг/сут</span>
+                            <span><strong>Прием:</strong> Во время еды</span>
+                        </div>
+                        <button class="drug-btn" onclick="openDrugInfo('metformin')">
+                            Подробнее
+                        </button>
+                    </div>
+
+                    <div class="drug-card" data-category="diabetes">
+                        <h3>Инсулин</h3>
+                        <p class="drug-class">Гормон</p>
+                        <p class="drug-description">Заместительная терапия при СД 1 типа</p>
+                        <div class="drug-details">
+                            <span><strong>Типы:</strong> Короткий, средний, длительный</span>
+                            <span><strong>Введение:</strong> Подкожно</span>
+                        </div>
+                        <button class="drug-btn" onclick="openDrugInfo('insulin')">
+                            Подробнее
+                        </button>
+                    </div>
+
+                    <div class="drug-card" data-category="thyroid">
+                        <h3>L-Тироксин</h3>
+                        <p class="drug-class">Гормон щитовидной железы</p>
+                        <p class="drug-description">Заместительная терапия при гипотиреозе</p>
+                        <div class="drug-details">
+                            <span><strong>Дозировка:</strong> 25-200 мкг/сут</span>
+                            <span><strong>Прием:</strong> Утром натощак</span>
+                        </div>
+                        <button class="drug-btn" onclick="openDrugInfo('levothyroxine')">
+                            Подробнее
+                        </button>
+                    </div>
+
+                    <div class="drug-card" data-category="adrenal">
+                        <h3>Гидрокортизон</h3>
+                        <p class="drug-class">Глюкокортикоиды</p>
+                        <p class="drug-description">Заместительная терапия при болезни Аддисона</p>
+                        <div class="drug-details">
+                            <span><strong>Дозировка:</strong> 15-25 мг/сут</span>
+                            <span><strong>Прием:</strong> 2-3 раза в день</span>
+                        </div>
+                        <button class="drug-btn" onclick="openDrugInfo('hydrocortisone')">
+                            Подробнее
+                        </button>
+                    </div>
+
+                    <div class="drug-card" data-category="calcium">
+                        <h3>Алендронат</h3>
+                        <p class="drug-class">Бисфосфонаты</p>
+                        <p class="drug-description">Препарат первой линии для лечения остеопороза</p>
+                        <div class="drug-details">
+                            <span><strong>Дозировка:</strong> 70 мг/неделя</span>
+                            <span><strong>Прием:</strong> Утром натощак</span>
+                        </div>
+                        <button class="drug-btn" onclick="openDrugInfo('alendronate')">
+                            Подробнее
+                        </button>
+                    </div>
+
+                    <div class="drug-card" data-category="calcium">
+                        <h3>Деносумаб</h3>
+                        <p class="drug-class">Моноклональное антитело</p>
+                        <p class="drug-description">Ингибитор RANKL для лечения остеопороза</p>
+                        <div class="drug-details">
+                            <span><strong>Дозировка:</strong> 60 мг/6 месяцев</span>
+                            <span><strong>Введение:</strong> Подкожно</span>
+                        </div>
+                        <button class="drug-btn" onclick="openDrugInfo('denosumab')">
+                            Подробнее
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news">
+            <div class="container">
+                <h2>Новости эндокринологии</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-date">15.12.2024</div>
+                        <h3>Новые рекомендации по лечению СД 2 типа</h3>
+                        <p>Обновлены клинические рекомендации по ведению пациентов с сахарным диабетом 2 типа...</p>
+                        <a href="#" class="news-link">Читать далее</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-date">10.12.2024</div>
+                        <h3>Новые препараты для лечения ожирения</h3>
+                        <p>Одобрены новые препараты для лечения ожирения с доказанной эффективностью...</p>
+                        <a href="#" class="news-link">Читать далее</a>
+                    </article>
+
+                    <article class="news-card">
+                        <div class="news-date">05.12.2024</div>
+                        <h3>Скрининг заболеваний щитовидной железы</h3>
+                        <p>Обновлены рекомендации по скринингу заболеваний щитовидной железы...</p>
+                        <a href="#" class="news-link">Читать далее</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Guidelines -->
+    <div id="guidelineModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Calculators -->
+    <div id="calculatorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="calculatorContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ЭндоГид</h3>
+                    <p>Клинические рекомендации для врачей-эндокринологов</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Разделы</h4>
+                    <ul>
+                        <li><a href="#guidelines">Рекомендации</a></li>
+                        <li><a href="#calculator">Калькуляторы</a></li>
+                        <li><a href="#drugs">Препараты</a></li>
+                        <li><a href="#news">Новости</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>Email: info@endoguid.ru</p>
+                    <p>Телефон: +7 (495) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ЭндоГид. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
